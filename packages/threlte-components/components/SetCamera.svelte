@@ -6,7 +6,7 @@
   export let isPerspectiveCamera = false;
   export let enablePan = false;
 
-  const position: [number, number, number] = [10, 10, 10];
+  export let position: [number, number, number] = [10, 10, 10];
 </script>
 
 {#if isPerspectiveCamera}

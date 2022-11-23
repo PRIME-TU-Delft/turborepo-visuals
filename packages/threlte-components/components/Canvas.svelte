@@ -16,6 +16,7 @@
   export let isPerspectiveCamera = false;
   export let floor = false;
   export let background = '#ffffff';
+  export let position: [number, number, number] = [10, 10, 10];
 
   let isPlaying = autoPlay;
   let isChangeing = false; // Are any of the sliders being changed?
@@ -48,7 +49,7 @@
 >
   <Canvas flat linear size={{ width, height }}>
     {#key resetCamera}
-      <SetCamera {isPerspectiveCamera} {enablePan} />
+      <SetCamera {position} {isPerspectiveCamera} {enablePan} />
     {/key}
 
     <slot name="lights">

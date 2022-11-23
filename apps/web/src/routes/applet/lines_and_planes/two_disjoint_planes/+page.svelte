@@ -11,7 +11,7 @@
   let sliders = new Sliders().addSlider(0, -5, 5, 0.5).addSlider(1, -5, 5, 0.5);
 </script>
 
-<Canvas3D bind:sliders title="Two planes without a point in common.">
+<Canvas3D position={[10, 5, 10]} bind:sliders title="Two planes without a point in common.">
   <AutoPlane values={sliders.values} let:value let:planeSegment let:color>
     <PlaneFromNormal position={new Vector3(0, value, 0)} {normal} {planeSegment} {color} />
   </AutoPlane>
