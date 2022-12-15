@@ -6,5 +6,4 @@ export { default as UI } from './components/UI.svelte';
 export { default as LatexUI } from './components/Latex.svelte';
 export { default as Formula } from './components/Formula.svelte';
 
-export { default as StoryLayout } from './components/stories/StoryLayout.svelte';
 export { default as Story } from './components/stories/Story.svelte';
