@@ -85,7 +85,6 @@
       <slot name="formulas" />
     </UI>
 
-    <!-- TODO -->
     <UI column bottom right opacity styled={false}>
       {#if isPlaying}
         <RoundButton icon={mdiPause} />
@@ -105,7 +104,7 @@
     overflow: hidden;
   }
 
-  :global(.canvasWrapper canvas) {
+  :global(.canvasWrapper > canvas) {
     position: absolute;
   }
 </style>

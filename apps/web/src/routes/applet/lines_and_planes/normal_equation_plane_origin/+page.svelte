@@ -16,7 +16,6 @@
   const q = _q.cross(n).normalize().multiplyScalar(n.length());
 </script>
 
-<!-- TODO: cameraPos={[1, 0.5, 2]} -->
 <Canvas3D title="A plane through the origin." isPerspectiveCamera={false}>
   <PlaneFromNormal normal={n} color={PrimeColor.yellow} />
 

@@ -6,3 +6,7 @@ html,
 body {
   height: 100%;
 }
+
+.latex .katex-display {
+  margin: 0;
+}

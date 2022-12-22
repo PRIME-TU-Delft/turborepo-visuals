@@ -17,6 +17,7 @@
     "utils": "*"
   },
   "dependencies": {
-    "katex": "^0.16.4"
+    "katex": "^0.16.4",
+    "screenfull": "^6.0.2"
   }
 }

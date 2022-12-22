@@ -20,7 +20,6 @@
   const q = _q.cross(normalizedNormal).normalize().multiplyScalar(normal.length());
 </script>
 
-<!-- TODO: cameraPos={[2, 0.5, 2]} -->
 <Canvas3D title="A plane through the point P.">
   <PlaneFromNormal {normal} position={p} color={PrimeColor.yellow} />
 

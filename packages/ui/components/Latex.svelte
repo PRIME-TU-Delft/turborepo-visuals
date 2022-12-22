@@ -40,10 +40,6 @@
   $: convertLatex(params.join(''));
 </script>
 
-{@html str}
-
-<style>
-  :global(.UI .katex-display) {
-    margin: 0;
-  }
-</style>
+<div class="latex">
+  {@html str}
+</div>

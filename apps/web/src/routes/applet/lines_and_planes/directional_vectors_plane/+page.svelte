@@ -19,7 +19,6 @@
   const pq = q.clone().sub(p.clone());
 </script>
 
-<!-- TODO: cameraPos={[2, 0.5, 2]} -->
 <Canvas3D title="A parametric vector equation of a plane.">
   <PlaneFromPoints points={[p, q, r]} color={PrimeColor.yellow} />
 

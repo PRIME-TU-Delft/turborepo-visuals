@@ -17,8 +17,7 @@
     "three": "^0.146.0",
     "threlte-components": "*",
     "ui": "*",
-    "utils": "*",
-    "visuals-3d": "*"
+    "utils": "*"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",

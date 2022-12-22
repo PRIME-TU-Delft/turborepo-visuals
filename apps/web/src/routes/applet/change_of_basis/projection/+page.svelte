@@ -35,10 +35,20 @@
   <Latex3D latex={'\\vec{b3}'} position={b3} />
 
   <!-- Helper axis [black vectors] -->
-  <Vector3D direction={b4} length={8.5} hideHead color="black" />
-  <Vector3D direction={b4.clone().multiplyScalar(-1)} length={8.5} hideHead color="black" />
-  <Vector3D direction={b5} length={8.5} hideHead color="black" />
-  <Vector3D direction={b5.clone().multiplyScalar(-1)} length={8.5} hideHead color="black" />
+  <Vector3D direction={b4} length={8.5} hideHead color={PrimeColor.pink} />
+  <Vector3D
+    direction={b4.clone().multiplyScalar(-1)}
+    length={8.5}
+    hideHead
+    color={PrimeColor.pink}
+  />
+  <Vector3D direction={b5} length={8.5} hideHead color={PrimeColor.pink} />
+  <Vector3D
+    direction={b5.clone().multiplyScalar(-1)}
+    length={8.5}
+    hideHead
+    color={PrimeColor.pink}
+  />
 
   <!-- Projection b1 -->
   <Point3D position={b1_proj} color={PrimeColor.green} />

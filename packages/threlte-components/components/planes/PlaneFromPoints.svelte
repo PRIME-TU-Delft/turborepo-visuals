@@ -1,13 +1,6 @@
 <script lang="ts">
-  import { MeshInstance } from '@threlte/core';
-  import {
-    PlaneGeometry,
-    MeshBasicMaterial,
-    DoubleSide,
-    Vector3,
-    Mesh as ThreeMesh,
-    Plane
-  } from 'three';
+  import { T } from '@threlte/core';
+  import { DoubleSide, Mesh, MeshBasicMaterial, Plane, PlaneGeometry, Vector3 } from 'three';
 
   import getRandomColor from 'utils/PrimeColors';
   import PlaneSegments from 'utils/Segments';
@@ -22,9 +15,6 @@
   export let opacity = 0.8;
   export let planeSegment = PlaneSegments.default();
 
-  let geometry = new PlaneGeometry(size, size, planeSegment.segments, 1);
-  let matrials = [new MeshBasicMaterial({ color, transparent: true, opacity, side: DoubleSide })];
-
   function setStripes() {
     geometry = new PlaneGeometry(size, size, planeSegment.segments, 1);
 
@@ -36,11 +26,15 @@
     }
   }
 
-  $: mesh = new ThreeMesh(geometry, matrials);
+  let geometry = new PlaneGeometry(size, size, planeSegment.segments, 1);
+  let materials = [new MeshBasicMaterial({ color, transparent: true, opacity, side: DoubleSide })];
+
+  $: mesh = new Mesh(geometry, materials);
 
   $: {
     if (planeSegment.segments > 1) setStripes();
-    mesh = new ThreeMesh(geometry, matrials);
+    mesh.geometry = geometry;
+    mesh.material = materials;
 
     const plane = new Plane().setFromCoplanarPoints(points[0], points[1], points[2]);
     plane.coplanarPoint(mesh.position);
@@ -48,5 +42,4 @@
   }
 </script>
 
-<!-- TODO: replace MeshInstance with T.Mesh -->
-<MeshInstance {mesh} />
+<T.Mesh bind:ref={mesh} />

@@ -1,6 +1,5 @@
 import { PrimeColor } from './PrimeColors';
 
-// TODO: add jsdoc & docs website
 export class Sliders {
   private _sliders: Slider[];
 
@@ -14,22 +13,28 @@ export class Sliders {
     return this;
   }
 
+  // Add a new slider to the Sliders object
   addSlider(dft: number, from?: number, to?: number, step?: number) {
-    if (this._sliders.length >= 3) return this; // Do not exceed 3 sliders
+    // If we already have 3 sliders, do not add another one
+    if (this._sliders.length >= 3) return this;
 
+    // Add new slider to the sliders array
     this._sliders.push(
+      // Create the new slider, setting the default value and other optional values
       Slider.set(dft).from(from).to(to).step(step).colorIndex(this._sliders.length)
     );
 
     return this;
   }
 
+  // Reset all sliders to their default values
   reset() {
     this._sliders = this._sliders.map((s) => s.reset());
 
     return this;
   }
 
+  // Are all sliders equal?
   get allEqual() {
     return this._sliders.every((s) => s.value == this._sliders[0].value);
   }
@@ -42,26 +47,41 @@ export class Sliders {
     return this._sliders.map((s) => s.value);
   }
 
+  // Get the value of a slider by its index
   private getSlider(index: number) {
     if (this._sliders.length < index) return 0;
 
     return this._sliders[index].value;
   }
 
+  // Get the value of the first slider
   get x() {
     return this.getSlider(0);
   }
 
+  // Get the value of the second slider
   get y() {
     return this.getSlider(1);
   }
 
+  // Get the value of the third slider
   get z() {
     return this.getSlider(2);
   }
 }
 
-// TODO: add jsdoc & docs website
+/**
+ * The Slider class is used to create a slider with a default value and a range of values.
+ * The default values are set to 0, -1, 1, and 0.1.
+ * The default color is ultramarine.
+ *
+ * @param defaultValue The default value for the slider
+ * @param min The minimum value for the slider
+ * @param max The maximum value for the slider
+ * @param step The step size for the slider
+ * @param color The color of the slider
+ */
+
 export class Slider {
   defaultValue = 0;
   min = -1;
